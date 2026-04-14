@@ -30,7 +30,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(pinoHTTP({ logger }));
 
 // API routes
-app.use(`${config.api.prefix}`, routes());
+app.use(`${config.api.prefix}`, routes(app));
 
 // Handle 404 route
 app.use((request, response, next) =>
