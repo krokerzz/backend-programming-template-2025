@@ -11,19 +11,16 @@ async function handleGacha(req, res) {
   }
 }
 
-// Bonus 1 [cite: 20]
 async function getHistory(req, res) {
   const data = await gachaRepository.getHistory(req.params.userId);
   res.status(200).json(data);
 }
 
-// Bonus 2 [cite: 21]
 async function getStatus(req, res) {
   const data = await gachaService.getRemainingQuotas();
   res.status(200).json(data);
 }
 
-// Bonus 3 [cite: 22]
 async function getWinners(req, res) {
   const data = await gachaRepository.getAllWinners();
   const masked = data.map((d) => {
